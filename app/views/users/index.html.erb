@@ -1,0 +1,14 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @users %>
+  <%# The previous line is equal to:
+  @users.each do |user| (percent, bigger than excl. in code comment)
+    render user 
+   end                          %>
+</ul>
+
+<%= will_paginate %>

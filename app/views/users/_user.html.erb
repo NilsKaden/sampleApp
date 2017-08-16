@@ -1,0 +1,10 @@
+<li>
+  <%= gravatar_for user, size: 50 %>
+  <%= link_to user.name, user %>
+  <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?"} %>
+  <% end %>
+  <%# this method only allows admins to delete users with javascript.
+  As a workaround, DELETE requests can be fakes with a form and a POST request,
+  instead of javascript. %>
+</li>
