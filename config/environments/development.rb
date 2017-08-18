@@ -25,10 +25,16 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+  
+  # mailer
+  
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = 'https://rails-nils94.c9users.io'  #Cloud 9 IDE
+  config.action_mailer.default_url_options = { host: host, protocol: 'https'}
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
+  
+  # default mailer stuff
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
