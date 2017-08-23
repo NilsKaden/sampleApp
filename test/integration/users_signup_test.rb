@@ -14,7 +14,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                 password: "foo", password_confirmation: "bar"}}
     end
     assert_template 'users/new'
-    assert_select 'div#error_explaination'
+    assert_select 'div#error_explanation'
     assert_select 'div.field_with_errors'
   end
   
